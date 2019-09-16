@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Movie Booking System</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+  </head>
+  <body id="landingPage">
+      <!--Nav Bar-->
+      <nav class="navbar navbar-expand-md  navbar-dark bg-dark fixed-top py-1">
+            <div class="container">
+              <a href="index.html" class="navbar-brand">
+                <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="50" height="50" alt=""><h3 class="d-inline align-middle">Book Ticket</h3>
+              </a>
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#movies" class="nav-link">Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#signin" class="nav-link">sing In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 mx-5 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+              </div>
+            </div>
+          </nav>
+      <!--corousal Movie-->
+      <div  class="my-2 border border-primary movieList">
+            <section id="movieshowcase" class="my-1">
+                    <div id="MovieCarousel" class="carousel slide" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#MovieCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#MovieCarousel" data-slide-to="1"></li>
+                    </ol>
+                      <div class="carousel-inner ">
+                        <div class="carousel-item carouselImageOne active ">
+                          <div class="container">
+                            <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <a href="#" class="btn btn-danger btn-lg">Book Now</a>
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="carousel-item carouselImageTwo">
+                          <div class="container">
+                            <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+                            </div>
+                          </div>
+                        </div>
+                
+                     <a href="#MovieCarousel" data-slide="prev" class="carousel-control-prev">
+                        <span class="carousel-control-prev-icon"></span>
+                      </a>
+                
+                      <a href="#MovieCarousel" data-slide="next" class="carousel-control-next">
+                        <span class="carousel-control-next-icon"></span>
+                      </a>
+                    </div>
+                  </section>
+      </div>
+     <!--Movies List-->
+     <section id="movies" class="my-1 text-center showArea">
+            <div class="container ">
+              <div class="row">
+                <div class="col">
+                  <div class="info-header mb-2">
+                    <h1 class="text-alert pb-1">
+                     Movies List
+                    </h1>
+                    <p class="lead pb-1">
+                     Movies Running Near By you
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row" id ="movieItems">
+              </div>
+            </div>
+     </section>
+     <!--Booking Modal-->
+     <div class="modal bd-example-modal-xl" id="movieModal">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="modMve"></h5>
+            <button class="btn btn-primary mr-2 ml-2" data-toggle="tooltip" data-placement="top" title="Tooltip on top">11 A.M.</button>
+            <button class="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Tooltip on top">2 P.M.</button>
+            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">5 P.M.</button>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+               <div class="form-group">
+                <label for="available Seats">Available Seats</label>
+                <input type="number" class="form-control" id ="avail" >
+                <label for="No of Seats You want">No of Seats You want</label>
+                <input type="number" class="form-control" id="seats">
+                 <label for="date">Date</label>
+                <input type="date" placeholder="date" class="form-control">
+                <label for="time">Time</label>
+                <input type="time" placeholder="time" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="password">Cost - 250 Per Person</label>
+                <h2 id="costCal"></h2>
+              
+            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" data-dismiss="modal" id="finalBook">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
